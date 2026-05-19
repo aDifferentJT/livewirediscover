@@ -52,7 +52,7 @@ target_compile_options(livewireserver PRIVATE ${flags})
 #linux specific
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
 	target_compile_definitions(livewireserver PRIVATE __GNU__)
-else()
+elseif(WIN32)
 	target_compile_definitions(livewireserver PRIVATE __WIN32__ LIVEWIRE_DLL)
 endif()
 
